@@ -40,7 +40,7 @@ router.get('/:identifier', (req, res) => {
         orWhere: { username: req.params.identifier }
     }).fetch().then(user => {
         res.json({ user });
-    })
+    });
 });
 
 router.post('/', (req, res) => {
@@ -57,6 +57,7 @@ router.post('/', (req, res) => {
 
         } else {
             res.status(400).json(errors);
+            
         }
     });
 });
